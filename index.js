@@ -34,9 +34,7 @@ app.post("/api/tech", async (request, response) => {
 });
 
 mongoose
-  .connect(
-    "mongodb+srv://8xnehanss_bootcamp:ccgTrweqa3ixbqpU@cluster0.uybfv4r.mongodb.net/portfolioData?retryWrites=true&w=majority"
-  )
+  .connect(process.env.mongoURI)
   .then(() => {
     console.log("[✅] DB connection successful");
   })
